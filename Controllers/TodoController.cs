@@ -27,6 +27,7 @@ namespace MyList.Controllers
         [HttpGet]
         public async Task<IEnumerable<Todo>> GetItemsAsync()
         {
+            Console.WriteLine("I am bbbbbbbbbbbbbbbb");
             var data = await repository.GetItemsAsync();
             return data;
         }
