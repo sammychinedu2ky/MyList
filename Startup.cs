@@ -15,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 using MyList.Model;
 using MyList.Actions;
 
+
 namespace MyList
 {
     public class Startup
@@ -36,7 +37,7 @@ namespace MyList
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyList", Version = "v1" });
             });
             services.AddDbContext<swactodoContext>(options =>
-            options.UseNpgsql(Configuration["connect"]));
+            options.UseNpgsql(Configuration["ConnectionStrings:connect"]));
             services.AddScoped<IRepository,Repository>();
         }
 
