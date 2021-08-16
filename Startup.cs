@@ -38,7 +38,9 @@ namespace MyList
             });
             services.AddDbContext<swactodoContext>(options =>
             options.UseNpgsql(Configuration["ConnectionStrings:connect"]));
+           // options.UseNpgsql(Configuration["ConnectionStrings:connect"]));
             services.AddScoped<IRepository,Repository>();
+             services.AddSingleton<IConfiguration>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
